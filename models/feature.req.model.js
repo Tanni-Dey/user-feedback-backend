@@ -28,6 +28,17 @@ const FeatureReqSchema = new mongoose.Schema({
     enum: ["newest", "oldest", "vote", "comment", ""],
     default: "newest",
   },
+  comments: [
+    {
+      user: {
+        type: String,
+      },
+      comment: {
+        type: String,
+      },
+    },
+  ],
+  vote: [{ type: String }],
 });
 
 module.exports = mongoose.model("FeatureReq", FeatureReqSchema);

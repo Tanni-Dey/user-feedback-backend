@@ -4,10 +4,11 @@ const { createCustomError } = require("../errors/customError");
 
 //create single user
 const createUser = asyncWrapper(async (req, res, next) => {
+  const { name, email, password } = req.body;
   const userData = {
-    name: req.body.name,
-    userEmail: req.body.email,
-    password: req.body.password,
+    name: name,
+    userEmail: email,
+    password: password,
   };
 
   // user checking
